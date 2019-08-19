@@ -1,0 +1,24 @@
+- (void)jobAlert
+{
+    UIAlertController * alert = [UIAlertController
+                                 alertControllerWithTitle:@"No jobs available!"
+                                 message:@"Kindly choose another Company!"
+                                 preferredStyle:UIAlertControllerStyleAlert];
+
+    //Add Buttons
+
+    UIAlertAction* yesButton = [UIAlertAction
+                                actionWithTitle:@"OK"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action) {
+                                    //Handle your yes please button action here
+                                    _editCompTxtFld.text = @"";
+                                    _editJobTxtFld.text = @"";
+                                    _job = @"";
+                                }];
+
+    [alert addAction:yesButton];
+
+
+    [self presentViewController:alert animated:YES completion:nil];
+}

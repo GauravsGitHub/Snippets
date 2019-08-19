@@ -1,0 +1,6 @@
+  NSDate *now = [NSDate date];
+   NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+   dateFormatter.dateFormat = @"HH:mm";
+   [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
+   NSLog(@"The Current Time is %@",[dateFormatter stringFromDate:now]);
+   NSString *strStartTime = [dateFormatter stringFromDate:strStartDate];
