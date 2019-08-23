@@ -1,0 +1,24 @@
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    NSInteger numOfSections = 0;
+    if ([dataArray count] > 0)
+    {
+        _tblView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        numOfSections                 = 1;
+        //yourTableView.backgroundView   = nil;
+        _tblView.backgroundView = nil;
+    }
+    else
+    {
+        UILabel *noDataLabel         = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, _tblView.bounds.size.width, _tblView.bounds.size.height)];
+        noDataLabel.text             = @"No data available";
+        noDataLabel.textColor        = [UIColor blackColor];
+        noDataLabel.textAlignment    = NSTextAlignmentCenter;
+        //yourTableView.backgroundView = noDataLabel;
+        //yourTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tblView.backgroundView = noDataLabel;
+        _tblView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    }
+
+    return numOfSections;
+}
