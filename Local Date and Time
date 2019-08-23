@@ -1,0 +1,11 @@
+NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+       [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+       [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+//        NSDate *date = [dateFormatter dateFromString:@"2015-04-01T11:42:00"]; // create date from string
+       NSDate *date = [NSDate date];
+
+       // change to a readable time format and change to local time zone
+       [dateFormatter setDateFormat:@"EEE, MMM d, yyyy - h:mm a"];
+       [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
+       NSString *timestamp = [dateFormatter stringFromDate:date];
+       NSLog(@"%@", timestamp);
