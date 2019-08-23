@@ -1,0 +1,8 @@
+CALayer *layer = cell.bgView.layer;
+      layer.shadowOffset = CGSizeMake(0, 1);
+      layer.shadowColor = [[UIColor blackColor] CGColor];
+      layer.shadowRadius = 4.0f;
+      layer.shadowOpacity = 0.80f;
+      //    layer.shadowPath = [[UIBezierPath bezierPathWithRect:layer.bounds] CGPath];
+      cell.bgView.layer.masksToBounds = NO;
+      cell.bgView.layer.cornerRadius = 4.0f;
